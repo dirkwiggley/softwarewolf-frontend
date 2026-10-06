@@ -6,6 +6,8 @@ import PageGuard from '../../../PageGuard';
 import { usePageTheme } from '../../../hooks/usePageTheme';
 import { PageHeader } from '@/components/ui/src/page-header';
 import { SectionHeader } from '@/components/ui/src/sectionHeader';
+import { ListCard } from '@/components/ui/src/list-card';
+import { ListCardWrapper } from '@/components/ui/src/list-card-wrapper';
 
 export default function PiratesCampaignPage() {
   const router = useRouter();
@@ -16,43 +18,103 @@ export default function PiratesCampaignPage() {
   // Uniform width class matching the exact horizontal profile of the Everward layout
   const widthContainerClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%]";
 
+  const TEAL_TAG = {tagColor: "bg-teal-500/10 text-teal-700 dark:text-teal-300 border-teal-500/20"};
+  const ROSE_TAG = {tagColor: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20"};
+  const AMBER_TAG = {tagColor: "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20"};
+
   // Mock array for layout demonstration matching your modular card style mechanics
   const PIRATE_MODULES = [
+    /*
+
+                  title: `Known ships and captains`,
+                  paragraph: 'Salts of all sorts',
+                    onClick: () => alert(`Checking out the docs...`),
+    */
     {
       id: "01",
-      title: "The Ship's Log",
-      description: "Chronicles of the high seas, voyages undertaken, and active marine contracts.",
-      tag: "Active Voyage",
-      tagColor: "bg-teal-500/10 text-teal-700 dark:text-teal-300 border-teal-500/20",
-      btnText: "Check Logbook →",
-      action: () => alert("Unrolling the captain's parchment log...")
+      title: "Countires and Languages",
+      description: "A list of important countries and languages players may encounter.",
+      tag: "Campaign Info",
+      ...TEAL_TAG,
+      btnText: "Speaking Slowly →",
+      action: () => router.push('/home/campaigns/pirates/countries'),
     },
     {
       id: "02",
+      title: "The crew and ships manifest",
+      description: "A list of PCs in the game.",
+      tag: "Character Info",
+      ...ROSE_TAG,
+      btnText: "Speaking Slowly →",
+      action: () => router.push('/home/campaigns/pirates/countries'),
+    },
+    {
+      id: "03",
+      title: "Character Portraits",
+      description: "Doodles of the dudles",
+      tag: "Character Info",
+      ...ROSE_TAG,
+      btnText: "Appreciating Art →",
+      action: () => alert(`Picking up the sketch pad...`),
+    },        
+    {
+      id: "04",
+      title: "Game Logs",
+      description: "Logs of high adventure.",
+      tag: "Campaign Info",
+      ...TEAL_TAG,
+      btnText: "Speaking Slowly →",
+      action: () => alert(`Mostly low adventure actually...`),
+    },        
+    {
+      id: "5",
+      title: "Messages",
+      description: "Postings from various locations.",
+      tag: "CLUES AND LEADS",
+      ...AMBER_TAG,
+      btnText: "Check Message Board →",
+      action: () => alert("Checkin the tavern wall.'...")
+    },
+    {
+      id: "6",
       title: "Ports of Call & Strongholds",
       description: "A comprehensive map directory of black market havens, hidden coves, and naval blockades.",
       tag: "Islands Map",
-      tagColor: "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20",
+      ...TEAL_TAG,
       btnText: "Chart Route →",
       action: () => alert("Plotting navigation lines across the map...")
     },
     {
-      id: "03",
-      title: "The Crew & Infamy List",
-      description: "Profiles of active deckhands, trusted officers, and targeted pirate hunters of the crown.",
-      tag: "Manifest",
-      tagColor: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20",
-      btnText: "Inspect Crew →",
-      action: () => alert("Reviewing the articles of the ship's manifest...")
+      id: "7",
+      title: "Fighting Schools",
+      description: "A collection of esoteric fighting arts.",
+      tag: "CATALOG",
+      ...AMBER_TAG,
+      btnText: "Equipping Weapons →",
+      action: () => alert("How to bash heads for dummies...")
+    },
+    {
+      id: "8",
+      title: "Magic and Legacies",
+      description: "Weird and scary powers.",
+      tag: "DESCRIPTIONS",
+      ...AMBER_TAG,
+      btnText: "Boo →",
+      action: () => alert("Remaining calm...")
+    },
+    {
+      id: "9",
+      title: "Known ships and captains",
+      description: "Profiles of active deckhands, trusted officers, and targeted pirate hunters.",
+      tag: "Campaign Info",
+      ...TEAL_TAG,
+      btnText: "Salts of all sorts →",
+      action: () => alert("Scoffing at information...")
     }
   ];
 
   return (
     <PageGuard allowedRoles={['ADMIN', 'MANAGER', 'USER', 'GUEST']}>
-      {/* 
-        min-h-[calc(100vh-73px)]: Accounts for navbar dimensions smoothly
-        backgroundClass / textClass: Instantly delivers your weathered-stone and deep marine colors
-      */}
       <div className={`w-full min-h-[calc(100vh-73px)] pb-12 transition-colors duration-200 ${backgroundClass} ${textClass}`}>
         
         <PageHeader
@@ -107,10 +169,8 @@ export default function PiratesCampaignPage() {
                   </button>
                 </section>
               ))}
-
             </main>
           </div>
-
         </div>
       </div>
     </PageGuard>
