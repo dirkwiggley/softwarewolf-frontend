@@ -1,0 +1,48 @@
+'use client';
+
+import React from 'react';
+import { PageHeader } from '../../../../../components/ui/src/page-header';
+import PageGuard from "../../../../PageGuard";
+import { usePageTheme } from '../../../../hooks/usePageTheme';
+import { EVERWARD_DISTRICTS } from './districtsData';
+import { CampaignRegistryViewer } from '../../../../components/CampaignRegistryViewer';
+import EverwardHomeLink from '../../../../components/EverwardHomeLink';
+
+export default function DistrictsOfEverward() {
+  const { backgroundClass, textClass } = usePageTheme();
+
+  // Initial expanded blocks matching our main content zones
+  const initialOpen = {
+    'The University of Everward': true,
+    'The Small Market': true,
+    "The Demon’s Grin Group Manor": true,
+    'The Royal Palace': true,
+    'The High Market Sprawl': true
+  };
+
+  const containerClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%] bg-[url('/parchment.jpg')] dark:bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/parchment.jpg')] bg-cover bg-center p-4 md:p-8 rounded-none md:rounded-lg shadow-md mb-6";
+
+  return (
+    <PageGuard allowedRoles={['ADMIN', 'MANAGER', 'USER', 'GUEST']}>
+      <div className={`w-full min-h-[calc(100vh-73px)] pb-12 transition-colors duration-200 ${backgroundClass} ${textClass}`}>
+        <EverwardHomeLink />
+        <PageHeader
+          title="Lowlife of Everward"
+          description="A list of the less savory individuals in the capitol."
+        />
+
+        <main className="py-4 px-0 md:px-4">
+          <div className={containerClass}>
+            <CampaignRegistryViewer 
+              registryData={EVERWARD_DISTRICTS}
+              defaultSectorId="palace-district"
+              selectorLabel="Select District Sector"
+              sidebarHeading="Registry Ledger"
+              initialExpandedLocations={initialOpen}
+            />
+          </div>
+        </main>
+      </div>
+    </PageGuard>
+  );
+}
