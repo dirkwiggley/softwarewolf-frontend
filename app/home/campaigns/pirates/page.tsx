@@ -33,12 +33,12 @@ export default function PiratesHomePage() {
     },
     {
       id: "02",
-      title: "The crew and ships manifest",
+      title: "The Crew and Ships Manifest",
       description: "A list of PCs in the game.",
       tag: "Character Info",
       ...ROSE_TAG,
-      btnText: "Speaking Slowly →",
-      action: () => router.push('/home/campaigns/pirates/countries'),
+      btnText: "Checking the roster →",
+      action: () => router.push('/home/campaigns/pirates/crew-and-manifest'),
     },
     {
       id: "03",
@@ -55,7 +55,7 @@ export default function PiratesHomePage() {
       description: "Logs of high adventure.",
       tag: "Campaign Info",
       ...TEAL_TAG,
-      btnText: "Speaking Slowly →",
+      btnText: "Chronicaling Carefully →",
       action: () => router.push('/home/campaigns/pirates/game-logs'),
     },        
     {
@@ -93,7 +93,7 @@ export default function PiratesHomePage() {
       tag: "DESCRIPTIONS",
       ...AMBER_TAG,
       btnText: "Boo →",
-      action: () => alert("Remaining calm...")
+      action: () => router.push('/home/campaigns/pirates/magic-and-legacies'),
     },
     {
       id: "9",
