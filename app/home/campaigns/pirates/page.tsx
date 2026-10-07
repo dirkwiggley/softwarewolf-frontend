@@ -83,7 +83,8 @@ export default function PiratesHomePage() {
       tag: "CATALOG",
       ...AMBER_TAG,
       btnText: "Equipping Weapons →",
-      action: () => alert("Readying weapons..."),
+      action: () => router.push('/home/campaigns/pirates/fighting-schools'),
+      // alert("Readying weapons..."),
     },
     {
       id: "8",
