@@ -6,6 +6,7 @@ import PageGuard from '../../../PageGuard';
 import { usePageTheme } from '../../../hooks/usePageTheme';
 import { PageHeader } from '@/components/ui/src/page-header';
 import { SectionHeader } from '@/components/ui/src/sectionHeader';
+import PiratesHomeLink from '@/app/components/PiratesHomeLink';
 
 export default function PiratesHomePage() {
   const router = useRouter();
@@ -82,7 +83,7 @@ export default function PiratesHomePage() {
       tag: "CATALOG",
       ...AMBER_TAG,
       btnText: "Equipping Weapons →",
-      action: () => alert("How to bash heads for dummies...")
+      action: () => alert("Readying weapons..."),
     },
     {
       id: "8",

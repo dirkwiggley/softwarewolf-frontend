@@ -1,17 +1,14 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import PageGuard from '../../../../PageGuard';
 import { usePageTheme } from '../../../../hooks/usePageTheme';
 import { PageHeader } from '@/components/ui/src/page-header';
 import { SectionHeader } from '@/components/ui/src/sectionHeader';
 import PiratesHomeLink from '@/app/components/PiratesHomeLink';
 
-export default function PiratesHomePage() {
-  const router = useRouter();
-  
-  const { backgroundClass, textClass, cardClass } = usePageTheme();
+export default function CountiresAndLanguages() {
+  const { backgroundClass, textClass } = usePageTheme();
 
   const sectionClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%] bg-[white] dark:bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))] bg-cover bg-center p-6 md:p-8 rounded-none md:rounded-lg shadow-md mb-6";
 
@@ -30,27 +27,23 @@ export default function PiratesHomePage() {
               title="Overview"
               subtitle="First time players should read this."
             />
-            {/* <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed opacity-95 text-slate-900 dark:text-amber-50"> */}
             <div className="mt-4 flex flex-col gap-4 leading-relaxed opacity-95 text-slate-900 dark:text-amber-50">
               <p>Boiler plate lorum ipsum etc...</p>
             </div>
           </div>
 
           <div className={sectionClass}>
-            <SectionHeader
-              title="Countries of the world"
-              subtitle="A bit about the major players in the world."
-            />
-            {/* <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed opacity-95 text-slate-900 dark:text-amber-50"> */}
+            <h1 className="text-2xl font-bold tracking-tight mt-2 text-slate-900 dark:text-amber-100">Countries of the World</h1>
+
             <div className="mt-4 flex flex-col gap-4 leading-relaxed opacity-95 text-slate-900 dark:text-amber-50">
-              <h2>Major Naval Powers</h2>
+              <h2 className="text-xl font-bold tracking-tight mt-4 text-slate-900 dark:text-amber-100">Major Naval Powers</h2>
               <ul>
                 <li>Kingdom of Elicya (equivalent to England)</li>
                 <li>Kingdom of Marehard (equivalent to France)</li>
                 <li>Kingdom of Boreland (equivalent to the Netherlands)</li>
                 <li>Kingdom of Casteel (equivalent to Spain)</li>
               </ul>
-              <h2>Other Powers</h2>
+              <h2 className="text-xl font-bold tracking-tight mt-4 text-slate-900 dark:text-amber-100">Other Powers</h2>
               <ul>
                 <li>Frankland (Germany)</li>
                 <li>Lisbon (Portugal)</li>
@@ -73,7 +66,7 @@ export default function PiratesHomePage() {
                 deal with as they tend to have a chip on their shoulder, expecting to have to prove themselves at
                 every turn. There are exceptions but such individuals are usually the result of an unconventional
                 upbringing.</p>
-              <h2>Languages</h2>
+              <h2 className="text-xl font-bold tracking-tight mt-4 text-slate-900 dark:text-amber-100">Languages</h2>
               <ul>
                 <li>Elicyian - Elycia</li>
                 <li>Mareish - Marehard</li>
