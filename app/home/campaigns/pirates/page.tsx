@@ -6,10 +6,8 @@ import PageGuard from '../../../PageGuard';
 import { usePageTheme } from '../../../hooks/usePageTheme';
 import { PageHeader } from '@/components/ui/src/page-header';
 import { SectionHeader } from '@/components/ui/src/sectionHeader';
-import { ListCard } from '@/components/ui/src/list-card';
-import { ListCardWrapper } from '@/components/ui/src/list-card-wrapper';
 
-export default function PiratesCampaignPage() {
+export default function PiratesHomePage() {
   const router = useRouter();
   
   // Consume your centralized layout page styling context properties
@@ -22,14 +20,7 @@ export default function PiratesCampaignPage() {
   const ROSE_TAG = {tagColor: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20"};
   const AMBER_TAG = {tagColor: "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20"};
 
-  // Mock array for layout demonstration matching your modular card style mechanics
   const PIRATE_MODULES = [
-    /*
-
-                  title: `Known ships and captains`,
-                  paragraph: 'Salts of all sorts',
-                    onClick: () => alert(`Checking out the docs...`),
-    */
     {
       id: "01",
       title: "Countires and Languages",
@@ -64,7 +55,7 @@ export default function PiratesCampaignPage() {
       tag: "Campaign Info",
       ...TEAL_TAG,
       btnText: "Speaking Slowly →",
-      action: () => alert(`Mostly low adventure actually...`),
+      action: () => router.push('/home/campaigns/pirates/game-logs'),
     },        
     {
       id: "5",

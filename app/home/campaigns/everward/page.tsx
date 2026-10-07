@@ -136,7 +136,7 @@ export default function EverwardCampaignPage() {
                   paragraph: `Ya gotta have 'em.`,
                   button: {
                     text: 'Go →',
-                    onClick: () => alert(`Running away...`),
+                    onClick: () => router.push('/home/campaigns/everward/villians-of-everward'),
                   },
                 }}
                 col2={{

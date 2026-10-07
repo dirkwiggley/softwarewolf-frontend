@@ -3,41 +3,35 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import PageGuard from '../../../../PageGuard';
-import { PageHeader } from '../../../../../components/ui/src/page-header';
-import { SectionHeader } from '../../../../../components/ui/src/sectionHeader';
 import { usePageTheme } from '../../../../hooks/usePageTheme';
+import { PageHeader } from '@/components/ui/src/page-header';
+import { SectionHeader } from '@/components/ui/src/sectionHeader';
 import PiratesHomeLink from '@/app/components/PiratesHomeLink';
 
-export default function PortsOfCall() {
+export default function PiratesHomePage() {
   const router = useRouter();
+  
+  const { backgroundClass, textClass, cardClass } = usePageTheme();
 
-  // Consume your centralized layout page styling context properties
-  const { backgroundClass, textClass } = usePageTheme();
-
-  // Standardized classes for full mobile width and expanded desktop width
-  // Note: Added a dark mode specific linear-gradient overlay to soften the parchment texture when dark mode is toggled!
-  const sectionClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%] bg-[url('/parchment.jpg')] dark:bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/parchment.jpg')] bg-cover bg-center p-6 md:p-8 rounded-none md:rounded-lg shadow-md mb-6";
+  const sectionClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%] bg-[white] dark:bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))] bg-cover bg-center p-6 md:p-8 rounded-none md:rounded-lg shadow-md mb-6";
 
   return (
     <PageGuard allowedRoles={['ADMIN', 'MANAGER', 'USER', 'GUEST']}>
       <div className={`w-full min-h-[calc(100vh-73px)] pb-12 transition-colors duration-200 ${backgroundClass} ${textClass}`}>
         <PiratesHomeLink />
         <PageHeader
-          title="Pirates Campaign"
-          description="Initial campaign notes."
+          title="Countries of the Known Worlde"
+          description="Places to go..."
         />
-
-        {/* Wrapping the content blocks inside a main tag provides structured page-level layout constraints */}
         <main className="py-4 flex flex-col">
-
-          {/* Overview Section */}
+         {/* Overview Section */}
           <div className={sectionClass}>
             <SectionHeader
               title="Overview"
               subtitle="First time players should read this."
             />
-            <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed opacity-95 text-slate-900 dark:text-amber-50">
-
+            {/* <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed opacity-95 text-slate-900 dark:text-amber-50"> */}
+            <div className="mt-4 flex flex-col gap-4 leading-relaxed opacity-95 text-slate-900 dark:text-amber-50">
               <p>Boiler plate lorum ipsum etc...</p>
             </div>
           </div>
@@ -47,7 +41,8 @@ export default function PortsOfCall() {
               title="Countries of the world"
               subtitle="A bit about the major players in the world."
             />
-            <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed opacity-95 text-slate-900 dark:text-amber-50">
+            {/* <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed opacity-95 text-slate-900 dark:text-amber-50"> */}
+            <div className="mt-4 flex flex-col gap-4 leading-relaxed opacity-95 text-slate-900 dark:text-amber-50">
               <h2>Major Naval Powers</h2>
               <ul>
                 <li>Kingdom of Elicya (equivalent to England)</li>
@@ -102,9 +97,8 @@ export default function PortsOfCall() {
               </ul>
             </div>
           </div>
-
         </main>
       </div>
-    </PageGuard >
+    </PageGuard>
   );
 }

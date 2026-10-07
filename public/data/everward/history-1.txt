@@ -1,0 +1,18 @@
+Title: The Foundational Era
+Tagline: Records of the First Age of Everward
+---
+The high walls of the city were built upon the foundation stones of the elder races. Long before the current factions fought over municipal sectors, the grand assembly held absolute dominion over the valleys.
+
+## The Archival Vaults
+Monks from the University of Everward have meticulously recorded the distribution of regional operational assets:
+
+| Monument Asset   | Sector Location    | Structural Integrity |
+| ---------------- | ------------------ | -------------------- |
+| The Grand Spires | Palace District    | Pristine             |
+| Old Iron Gate    | High Market Sprawl | Weathered            |
+| Mage Tower Core  | University Grounds | Fractured            |
+
+## High-Council Decrees
+According to ancient ledger transcripts recovered from the deep masonry vaults:
+
+> "Let it be known that any citizen who breaches the municipal zone limits past the midnight hour without explicit clearance shall forfeit their operational clearing status."

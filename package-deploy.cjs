@@ -6,7 +6,7 @@ const projectRoot = __dirname;
 const standaloneDir = path.join(projectRoot, '.next', 'standalone');
 const staticDir = path.join(projectRoot, '.next', 'static');
 const publicDir = path.join(projectRoot, 'public');
-const finalZipPath = path.join(projectRoot, 'softwarewolf-pure-frontend.zip');
+const finalZipPath = path.join(projectRoot, 'softwarewolf-frontend.zip');
 
 // Clean staging area to match standard Next.js standalone specification
 const stagingDir = path.join(projectRoot, 'hostinger_staging');

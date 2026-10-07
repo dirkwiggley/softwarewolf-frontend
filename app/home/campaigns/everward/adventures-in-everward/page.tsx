@@ -16,10 +16,6 @@ export default function AdventuresInEverward() {
 
   return (
     <PageGuard allowedRoles={['ADMIN', 'MANAGER', 'USER', 'GUEST']}>
-      {/* 
-        min-h-[calc(100vh-73px)]: Prevents layout height shifting issues
-        backgroundClass / textClass: Injects your rich high-fantasy campaign colors seamlessly
-      */}
       <div className={`w-full min-h-[calc(100vh-73px)] pb-12 transition-colors duration-200 ${backgroundClass} ${textClass}`}>
         <EverwardHomeLink />
         <PageHeader
