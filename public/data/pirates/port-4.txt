@@ -3,10 +3,14 @@ Tagline: Elicyian Port
 ---
 Strathmore is a fair sized port town. Situated on a main shipping lane with fair winds and currents that can take a ship to the capital quickly.
 
+<br />
+
 **Town Notables**
 
 - Governor Abundant Nibs
 - Captain Virgil Astute
+
+<br />
 
 **Locations**
 - Navigators Guild

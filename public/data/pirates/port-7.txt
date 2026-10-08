@@ -3,6 +3,8 @@ Tagline: Marehardian Port
 ---
 Major port town built along a cliff. 
 
+<br />
+
 **Notable People**
 
 - Governor Francois Roquefort
@@ -15,6 +17,8 @@ Major port town built along a cliff.
 - Captain Gros Baton
 - Aline DuSand - Musketeer
 - Captain Glissante Jacques of the Hippocampe (famous privateer)
+
+<br />
 
 **Places of Note**
 

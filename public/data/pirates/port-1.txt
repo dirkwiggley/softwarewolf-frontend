@@ -3,6 +3,7 @@ Tagline: Elicyian Port
 ---
  Port Gullsaim (Kingdom of Elicya)  Known for its overabundance of sea gulls and for being an out-of-the-way harbor. Though the designation of harbor is generous.  
 
+<br />
 
 **Town Notables**
 
@@ -22,8 +23,10 @@ Tagline: Elicyian Port
 - Doctor Robin Leach
 - Captain Silver Flask – a nominally successful pirate captain of the Furious Beaver who frequented Port Gullsaim before his recent demise.
 
+<br />
+
 **Events**
 
 There is an annual fishing rally that occurs on the unluckiest day of the year for the town. Everyone who can participates in the rally or in the various rescue efforts as this is considered an event that lessens the bad luck for the town for the rest of the year. The winner is the person who brings back the largest/heaviest whole fish before sunset. It is typical for no one to win the competition and the entrance fees roll over to the next year.
  
-`Characters who grew up in Port Gullsaim get +1 on Throwing skill and the Dodge Edge.`
+**Characters who grew up in Port Gullsaim get +1 on Throwing skill and the Dodge Edge.**
