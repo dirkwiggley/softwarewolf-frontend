@@ -11,4 +11,4 @@ A large town with a strong fort and a substantial port. This fortified town is a
 - Admiral Victor De los Reyes Ortega
 - Cardinal Villano Mala Persona
 
-`Characters from Pontena gain a free reroll on any failed persuasion or intimidation checks.`
+**Characters from Pontena gain a free reroll on any failed persuasion or intimidation checks.**

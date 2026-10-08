@@ -10,4 +10,4 @@ A small fortified port and market.
 - Governor Tufgui Nekchooken
 - Captain Hranfast Skardsson
 
-`Characters who come from Mannafallsbrekka gain the Brawny Edge, and 1 point in the fighting skill.`
+**Characters who come from Mannafallsbrekka gain the Brawny Edge, and 1 point in the fighting skill.`**
