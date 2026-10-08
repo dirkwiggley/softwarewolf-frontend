@@ -1,0 +1,12 @@
+Title: Pontena 
+Tagline: Castellian Port
+---
+A large town with a strong fort and a substantial port. This fortified town is a regular stop of the Castillian treasure fleet.
+
+**Notable People**
+
+- Governor Estrega Alvar Macarena 
+- Admiral Victor De los Reyes Ortega
+- Cardinal Villano Mala Persona
+
+`Characters from Pontena gain a free reroll on any failed persuasion or intimidation checks.`

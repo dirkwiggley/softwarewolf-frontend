@@ -74,7 +74,7 @@ export default function PiratesHomePage() {
       tag: "Islands Map",
       ...TEAL_TAG,
       btnText: "Chart Route →",
-      action: () => alert("Plotting navigation lines across the map...")
+      action: () => router.push('/home/campaigns/pirates/ports-of-call'),
     },
     {
       id: "7",
