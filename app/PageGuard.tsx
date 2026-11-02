@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { useSecurity } from './SecurityContext';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface PageGuardProps {
   children: React.ReactNode;
@@ -12,31 +12,38 @@ interface PageGuardProps {
 export default function PageGuard({ children, allowedRoles }: PageGuardProps) {
   const { userProfile, loading } = useSecurity();
   const router = useRouter();
+  const pathname = usePathname();
 
-  // Extract the active runtime clearance role
+  // Extract the active runtime clearance role safely
   const activeRole = userProfile?.role || 'GUEST';
 
-  // Strategy: Trigger absolute gateway redirection whenever a guest hits a protected path
   useEffect(() => {
-    if (!loading) {
-      const isGuestSessionAllowed = typeof window !== 'undefined' && sessionStorage.getItem('wolf_guest_allowed') === 'true';
-      const isUserLoggedIn = userProfile && userProfile.role !== 'GUEST';
+    // ⚠️ STOPS THE REFRESH KICK: If the background API check is still running, do absolutely nothing!
+    if (loading) return;
 
-      // Baseline rule: Forced login execution for first-time entries who are not authorized users or verified guests
-      if (!isUserLoggedIn && !isGuestSessionAllowed) {
-        router.replace('/login');
-        return;
-      }
+    // If the network request finished but context hasn't filled the profile state yet, wait.
+    if (!userProfile) return;
 
-      // Role boundary rule: A cleared guest tries to access an explicit restriction zone (e.g., /admin-hub)
-      if (activeRole === 'GUEST' && allowedRoles && !allowedRoles.includes('GUEST')) {
-        router.replace('/login');
-      }
+    const isGuestSessionAllowed = typeof window !== 'undefined' && sessionStorage.getItem('wolf_guest_allowed') === 'true';
+    const isUserLoggedIn = userProfile && userProfile.id !== null && userProfile.role !== 'GUEST';
+
+    // Prevent redirection loop if the user is already standing on the login page
+    if (pathname === '/login') return;
+
+    // Rule 1: Forced login execution for first-time entries who are not authorized users or verified guests
+    if (!isUserLoggedIn && !isGuestSessionAllowed) {
+      router.replace('/login');
+      return;
     }
-  }, [activeRole, loading, allowedRoles, userProfile, router]);
+
+    // Rule 2: Role boundary rule: A cleared guest tries to access an explicit restriction zone (e.g., /admin-hub)
+    if (activeRole === 'GUEST' && allowedRoles && !allowedRoles.includes('GUEST')) {
+      router.replace('/login');
+    }
+  }, [activeRole, loading, allowedRoles, userProfile, router, pathname]);
 
   // Keep rendering layout suspended while the network handshake completes
-  if (loading) {
+  if (loading || !userProfile) {
     return (
       <div style={{ minHeight: '100vh', background: '#09090b', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a1a1aa', fontFamily: 'system-ui, sans-serif', fontSize: '13px' }}>
         Authenticating structural system parameters...
