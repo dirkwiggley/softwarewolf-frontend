@@ -24,6 +24,26 @@ export default function GamingCentralPage() {
   const modules = [
     { url: "/the_rats_in_the_cradle_generic.jpg", alt: "The Rats in the Cradle Module" },
   ]
+  const magicHutEtc = [
+    { url: "https://i.imgur.com/XHbY4H1.jpeg", alt: "Baba Yaga's Hut" },
+    { url: "https://i.imgur.com/46i2NV9.jpeg", alt: "The Infinite Staircase" },
+    { url: "https://i.imgur.com/FHFkweV.jpeg", alt: "The Infinite Staircase Again" }
+  ]
+  const theBridge = [
+    { url: "https://i.imgur.com/6vwX8Oi.jpeg", alt: "This was about 5' long" },
+    { url: "https://i.imgur.com/S9ZTwfn.jpeg", alt: "The gatehouse is pretty cool" },
+    { url: "https://i.imgur.com/DEsL7Kb.jpeg", alt: "The tower was a bit of a pain to paint" },
+    { url: "https://i.imgur.com/FKsMvB6.jpeg", alt: "But the tower like the gatehouse if fully accessable" },
+    { url: "https://i.imgur.com/MedFLOu.jpeg", alt: "All the way down to the foundation" },
+    { url: "https://i.imgur.com/L3NOZEO.jpeg", alt: "Though I'm still working out how to do a whole adventure around the bridge" }
+  ]
+  const baronPhlebottomus = [
+    { url: "https://i.imgur.com/bRH1NZK.jpeg", alt: "Basic view from above" },
+    { url: "https://i.imgur.com/h0jHIgS.jpeg", alt: "I started experimenting with the colors I use on castles" },
+    { url: "https://i.imgur.com/JmbPyHb.jpeg", alt: "How the castle breaks down" },
+    { url: "https://i.imgur.com/Xj9RprY.jpeg", alt: "Another breakdown image" },
+    { url: "https://i.imgur.com/eyKkYbq.jpeg", alt: "A slightly better view from above" }
+  ]
 
   // Standardized classes for full mobile width and expanded desktop width
   const sectionClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%] bg-[url('/parchment.jpg')] dark:bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/parchment.jpg')] bg-cover bg-center p-6 md:p-8 rounded-none md:rounded-lg shadow-md mb-6";
@@ -57,7 +77,6 @@ export default function GamingCentralPage() {
         </div>
 
         <div className={sectionClass}>
-
           <SectionHeader
             title="Dungeon Terrain"
             subtitle="I 3D print and paint rather a lot of terrain for my game. Here's a sample."
@@ -78,6 +97,33 @@ export default function GamingCentralPage() {
             bodyText="This set terrified my players"
             images={cryptImages}
             columns={4}
+          />
+
+          <div className="h-4" aria-hidden="true"></div>
+
+          <ImageGalleryCard
+            heading="Magic Places"
+            bodyText="Baba Yaga's Hut and the Infinite Staircase"
+            images={magicHutEtc}
+            columns={3}
+          />
+
+          <div className="h-4" aria-hidden="true"></div>
+
+          <ImageGalleryCard
+            heading="The Bridge"
+            bodyText="A very big terrain piece"
+            images={theBridge}
+            columns={4}
+          />
+
+          <div className="h-4" aria-hidden="true"></div>
+
+          <ImageGalleryCard
+            heading="The Castle of Baron Phlebottomus"
+            bodyText="An evil castle"
+            images={baronPhlebottomus}
+            columns={2}
           />
         </div>
 
