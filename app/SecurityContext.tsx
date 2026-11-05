@@ -65,12 +65,14 @@ export const SecurityProvider = ({ children }: { children: React.ReactNode }) =>
     const verifyIdentitySession = async () => {
       try {
         const tabVerified = sessionStorage.getItem('wolf_tab_session_active');
+        const isGuestAllowed = sessionStorage.getItem('wolf_guest_allowed') === 'true';
 
-        if (!tabVerified) {
+        // Only wipe storage if the tab is unverified AND it's not an active verified guest session
+        if (!tabVerified && !isGuestAllowed) {
           sessionStorage.clear();
         }
 
-        // FIX: Added credentials 'include' to ensure cross-domain session cookies pass successfully
+        // Added credentials 'include' to ensure cross-domain session cookies pass successfully
         const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
           credentials: 'include'
         });
@@ -126,7 +128,7 @@ export const SecurityProvider = ({ children }: { children: React.ReactNode }) =>
   const logoutUser = async () => {
     try {
       // FIX: Added credentials 'include' so the backend knows whose session cookie to invalidate
-      await fetch(`${API_BASE_URL}/api/auth/logout`, { 
+      await fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: 'POST',
         credentials: 'include'
       });
