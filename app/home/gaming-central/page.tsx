@@ -44,6 +44,15 @@ export default function GamingCentralPage() {
     { url: "https://i.imgur.com/Xj9RprY.jpeg", alt: "Another breakdown image" },
     { url: "https://i.imgur.com/eyKkYbq.jpeg", alt: "A slightly better view from above" }
   ]
+  const dwarvenStuff = [
+    { url: "https://i.imgur.com/RmF3BhX.jpeg", alt: "The entrance" },
+    { url: "https://i.imgur.com/wYBNOhW.jpeg", alt: "The entrance room" },
+    { url: "https://i.imgur.com/6n2fzmj.jpeg", alt: "The mines" },
+    { url: "https://i.imgur.com/x3ZahLI.jpeg", alt: "The mines from a different angle" },
+    { url: "https://i.imgur.com/9KY5r2w.jpeg", alt: "The dwarven bridge" },
+    { url: "https://i.imgur.com/CrZKtuF.jpeg", alt: "The dwarven bridge from a higer vantage point" },
+    { url: "https://i.imgur.com/Bfq3G6h.jpeg", alt: "The dwarven bridge from a different angle" }
+  ]
 
   // Standardized classes for full mobile width and expanded desktop width
   const sectionClass = "w-full max-w-5xl mx-0 md:mx-auto md:w-[85%] bg-[url('/parchment.jpg')] dark:bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/parchment.jpg')] bg-cover bg-center p-6 md:p-8 rounded-none md:rounded-lg shadow-md mb-6";
@@ -124,6 +133,15 @@ export default function GamingCentralPage() {
             bodyText="An evil castle"
             images={baronPhlebottomus}
             columns={2}
+          />
+
+          <div className="h-4" aria-hidden="true"></div>
+
+          <ImageGalleryCard
+            heading="The Dwarven collection"
+            bodyText="My Dwarven pieces"
+            images={dwarvenStuff}
+            columns={3}
           />
         </div>
 
